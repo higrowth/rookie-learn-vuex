@@ -190,30 +190,26 @@ vm.$once( event, callback )
 
 其实很简单，就是当我们使用`$once`时，其内部定义了一个on方法，会先调用`$off`方法移除掉对用的事件监听，然后调用对应的函数，这样就达到了只触发一次的效果。
 
-
-
 总结一下：
 
 对于EventBus来说，其实就是通过实例化一个vue构造函数，获得vue的实例对象，然后将这个实例对象的`_events`属性作为一个挂载点，以自定义的名称作为key，然后这个自定义事件的监听函数作为value，调用`$on`监听的时候，会将这个监听函数放到`_events[event]`对应的数组中去，当调用`$emit`触发时，其实就是找到这个value数组，将其中的函数每个都触发一下。这也是基于回调函数来实现的。
-
-
 
 最后，我们在vue项目demo中打印一下这个实例来看一下：
 
 当我们还没有触发`$emit`时，只是使用`$on`监听了自定义事件，我们打印一下这个EventBus实例：
 
-![](/Users/lichao/学习笔记/Vue技术栈源码分析系列/assets/vuex_on_code.png)
+![](./assets/vuex_on_code.png)
 
 在控制台我们看到：
 
-![](/Users/lichao/学习笔记/Vue技术栈源码分析系列/assets/vuex_on_instance.png)
+![](./assets/vuex_on_instance.png)
 
 这也跟我们之前所说的一样，在`$on`阶段，vue已经把这个自定义事件挂在到了这个实例对象的`_events`属性下，这个key就是我们自定义事件的名称，value是对应的监听函数。
 
 接着，我们调用`$emit`方法：
 
-![](/Users/lichao/学习笔记/Vue技术栈源码分析系列/assets/vuex_emit_code.png)
+![](./assets/vuex_emit_code.png)
 
-![](/Users/lichao/学习笔记/Vue技术栈源码分析系列/assets/vuex_emit_instance.png)
+![](./assets/vuex_emit_instance.png)
 
 最终我们也看到，我们先出发了`$emit` 后，`$on`监听函数打印出了传递的信息，这也印证了emit中其实就是调用了每一个监听事件。

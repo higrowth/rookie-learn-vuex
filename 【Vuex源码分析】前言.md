@@ -45,11 +45,11 @@ Vuex 背后的基本思想，借鉴了 [Flux](https://facebook.github.io/flux/do
 
 将Vuex源码[vuex-3.0.1](https://github.com/vuejs/vuex/archive/v3.0.1.zip) clone下来之后，我们可以看到其目录结构：
 
-![](/Users/lichao/学习笔记/Vue技术栈源码分析系列/assets/vuex_constructor.png)
+![](./assets/vuex_constructor.png)
 
 其源码主要放到了src文件夹下。
 
-![](/Users/lichao/学习笔记/Vue技术栈源码分析系列/assets/vuex_src.png)
+![](./assets/vuex_src.png)
 
 其中的只包含了几个js文件，以及模块文件和插件。
 
