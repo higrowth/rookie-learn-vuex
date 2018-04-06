@@ -18,8 +18,6 @@ export default {
 
 从export可以看出vuex对外暴露出的API。这里稍微说一下，Store是Vuex提供的状态存储类，我们使用vuex就是通过`new Store()`来获得实例对象，稍后再详细讲解。
 
-
-
 在Vue中我们知道，Vue有个全局性的API，就是`Vue.use(plugin)` 这个方法。我们看一下官方文档的解释：
 
 ```

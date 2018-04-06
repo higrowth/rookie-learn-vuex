@@ -17,3 +17,4 @@
 
 #### 4、[【Vuex源码分析】探索Store构造函数](./【Vuex源码分析】探索Store构造函数.md)
 
+#### 5、[【Vuex源码分析】Vuex初始化实现](./【Vuex源码分析】Vuex初始化实现.md)
