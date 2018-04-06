@@ -201,7 +201,7 @@ new Vuex.Store({
 
 这个实例对象，如下：
 
-![](/Users/lichao/GithubCode/rookie-learn-vuex/assets/vuex_store_instance.png)
+![](./assets/vuex_store_instance.png)
 
 这里我们也看到，在`_actions`下存放了我们定义的actions，其中有个`_committing`也说明了在action中commit调用mutation时，时同步操作。此外，在`_mutations`中保存了我们定义的mutations。而在state中，除了rootStore保存的state，还包括了一个子模块dres对应的state。
 
